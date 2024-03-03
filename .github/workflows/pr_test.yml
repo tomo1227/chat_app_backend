@@ -1,0 +1,55 @@
+name: pull-request-test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # ワークフローの可視化
+      - uses: Kesin11/actions-timeline@v2
+      # チェックアウト
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      # 差分を取得
+      - name: Get changed files
+        id: get_changed_files
+        run: |
+          files=$(git diff --name-only origin/${{ github.base_ref }}...origin/${{ github.head_ref }} | tr '\n' ' ')
+          echo "changed files: $files"
+          echo "CHANGED_FILES=$files" >> $GITHUB_OUTPUT
+      # Goファイルが変更されているかチェック
+      - name: Check go files changed
+        id: check_go_files_changed
+        run: |
+          GO_FILES_CHANGED=false
+          for file in ${{ steps.get_changed_files.outputs.CHANGED_FILES }}; do
+            if [[ "$file" == *.go || "$file" == go.mod || "$file" == go.sum ]]; then
+              echo "GO_FILES_CHANGED=true" >> $GITHUB_OUTPUT
+              break
+            fi
+          done
+      # imageをpullする
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2 
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      # golangのテスト
+      - name: Build and run Dev Container task
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: ghcr.io/tomo1227/ws_app_backend-devcontainer
+          runCmd: |
+            go mod tidy
+            go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(pwd) xargs go test -cover -v
+          
