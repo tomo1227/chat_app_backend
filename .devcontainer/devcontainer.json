@@ -1,9 +1,9 @@
 {
-    "name": "ws_chat_app",
+    "name": "chat-app",
     "dockerComposeFile": [
         "docker-compose.yml"
     ],
-    "service": "backend",
+    "service": "devcontainer",
     "workspaceFolder": "/workspace",
     "features": {
         "ghcr.io/devcontainers/features/go:1": {

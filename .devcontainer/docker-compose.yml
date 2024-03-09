@@ -1,13 +1,13 @@
 version: "3.8"
 services:
-  backend:
-    hostname: ${PROJECT_NAME}_backend
-    container_name: ws-backend-devcontainer
+  devcontainer:
+    hostname: ${PROJECT_NAME}
+    container_name: ${PROJECT_NAME}
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: .devcontainer/Dockerfile
     volumes:
-      - ..:/workspace:cached
+      - .:/workspace:cached
     ports:
       - 80:8080
     tty: true

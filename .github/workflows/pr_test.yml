@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
-
+permissions: write-all
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
       - name: Build and run Dev Container task
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/tomo1227/ws_app_backend-devcontainer
+          imageName: ghcr.io/tomo1227/chat_app_backend-devcontainer
           runCmd: |
             go mod tidy
             go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(pwd) xargs go test -cover -v

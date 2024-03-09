@@ -1,4 +1,4 @@
-module github.com/tomo1227/dust/cmd/api
+module github.com/tomo1227/chat_app_backend/cmd/api
 
 go 1.21.5
 

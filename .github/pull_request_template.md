@@ -1,5 +1,5 @@
 # セルフチェック
-- [ ] [PRガイドライン](https://github.com/tomo1227/dust/blame/main/README.md#pull-request-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3)を守っている
+- [ ] [PRガイドライン](https://github.com/tomo1227/chat_app_backend/blame/main/README.md#pull-request-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3)を守っている
 - [ ] ローカルでビルド、テストが通っている
 - [ ] [Godoc](https://pkg.go.dev/golang.org/x/tools/cmd/godoc)に沿って実装できている
 - [ ] ドキュメント化ができている
