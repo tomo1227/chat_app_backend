@@ -1,6 +1,7 @@
 {
     "name": "chat-app",
     "dockerComposeFile": [
+        "../docker-compose.yml",
         "docker-compose.yml"
     ],
     "service": "devcontainer",
