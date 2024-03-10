@@ -28,7 +28,7 @@
             },
             "extensions": [
                 "ms-vscode.live-server",
-                "ms-vscode.makefile-tools",
+                // "ms-vscode.makefile-tools",
                 "GitHub.vscode-pull-request-github",
                 "github.vscode-github-actions",
                 "mhutchie.git-graph",
