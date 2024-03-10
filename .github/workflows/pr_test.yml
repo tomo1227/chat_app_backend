@@ -52,4 +52,13 @@ jobs:
           runCmd: |
             go mod tidy
             go list -f '{{.Dir}}/...' -m | WORKSPACE_DIR=$(pwd) xargs go test -cover -v
-          
+
+      # Slackに通知
+      - name: Notify PR Action Status
+        uses: 8398a7/action-slack@v3.8.0
+        with:
+          status: ${{ job.status }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
