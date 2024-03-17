@@ -1,6 +1,6 @@
 github.com/gorilla/websocket v1.5.1 h1:gmztn0JnHVt9JZquRuzLw3g4wouNVzKL15iLr/zn/QY=
 github.com/gorilla/websocket v1.5.1/go.mod h1:x3kM2JMyaluk02fnUJpQuwD2dCS5NDG2ZHL0uE0tcaY=
-github.com/tomo1227/chat_app_backend v0.0.0-20240310071849-7e30ce52e314 h1:K/qQw0QIRfjzOUPs8c2iptaTXmsD6NWM8znirttJJto=
-github.com/tomo1227/chat_app_backend v0.0.0-20240310071849-7e30ce52e314/go.mod h1:VKajmJD5JIfrnG0N9I4kmEt5VfnIp08U4UPatQypOpw=
-golang.org/x/net v0.21.0 h1:AQyQV4dYCvJ7vGmJyKki9+PBdyvhkSd8EIx/qb0AYv4=
-golang.org/x/net v0.21.0/go.mod h1:bIjVDfnllIU7BJ2DNgfnXvpSvtn8VRwhlsaeUTyUS44=
+github.com/tomo1227/chat_app_backend v0.0.0-20240316165934-ab7444024586 h1:b/ZwKYAKp3TH0t1w40KOdEInbBr3kUisRF9o4Bl2Vww=
+github.com/tomo1227/chat_app_backend v0.0.0-20240316165934-ab7444024586/go.mod h1:VKajmJD5JIfrnG0N9I4kmEt5VfnIp08U4UPatQypOpw=
+golang.org/x/net v0.22.0 h1:9sGLhx7iRIHEiX0oAJ3MRZMUCElJgy7Br1nO+AMN3Tc=
+golang.org/x/net v0.22.0/go.mod h1:JKghWKKOSdJwpW2GEx0Ja7fmaKnMsbu+MWVZTokSYmg=
